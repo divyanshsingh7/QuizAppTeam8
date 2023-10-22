@@ -2,13 +2,23 @@ package com.quiz;
 
 public interface QuizInterface {
 
-    void login();
+    default void login() {
 
-    void selectNoOfQuesAndLevel();
+    }
 
-    void displayQuesAndTimer();
+    default void selectNoOfQuesAndLevel() {
 
-    void resultValidation();
+    }
 
-    void playOnceAgain();
+    default void displayQuesAndTimer() {
+
+    }
+
+    default void resultValidation() {
+
+    }
+
+    default void playOnceAgain() {
+
+    }
 }
