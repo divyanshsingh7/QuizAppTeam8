@@ -2,11 +2,11 @@ package com.quiz.login;
 
 public class NewUser {
 
-    String name = "user";
+    String name;
 
-    String username = "user";
+    String username;
 
-    String password = "user";
+    String password;
 
     public NewUser() {
 

@@ -10,6 +10,10 @@ public class Login implements QuizInterface {
     int option;
     Scanner scan = new Scanner(System.in);
 
+    String defaultUserName = "user";
+    String defaultPassWord = "user";
+    String defaultName = "user";
+
     @Override
     public void login() {
         String username = nu.getUsername();
@@ -22,8 +26,11 @@ public class Login implements QuizInterface {
 
         if ((loggedName.equals(username)) && (loggedPd.equals(pd)))
             System.out.println("Welcome " + nu.getName() + "! to the quiz app");
-        else
+        else if ((loggedName.equals(defaultUserName)) && (loggedPd.equals(defaultPassWord)))
+            System.out.println("Welcome " + defaultName + "! to the quiz app");
+        else {
             createAccount();
+        }
     }
     public void createAccount() {
         try {
@@ -31,7 +38,7 @@ public class Login implements QuizInterface {
             System.out.println("1. Wanna retry once again");
             System.out.println("2. Create account with us");
             option = scan.nextInt();
-            scan.nextLine();                                    //Scanner is skipping nextLine() after using next(). Resolved using stackoverflow -> https://stackoverflow.com/questions/13102045/scanner-is-skipping-nextline-after-using-next-or-nextfoo
+            scan.nextLine();                                    //Scanner is skipping nextLine() after using nextInt(). Resolved using stackoverflow -> https://stackoverflow.com/questions/13102045/scanner-is-skipping-nextline-after-using-next-or-nextfoo
             if (option == 1)
                 login();
             else if (option == 2)
